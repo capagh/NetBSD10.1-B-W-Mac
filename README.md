@@ -10,6 +10,8 @@ Direct questions or comments to capa150 at gmail.com
 - Preventing caps-lock from freezing a blue-and-white G3
 - X11 with the blue-and-white
 
+Although I wrote this for the b&w G3, the information in this document may be useful for installing NetBSD 10.1 on other Macintosh models.
+
 There are several ways to install NetBSD 10.1 on a Mac. This text describes two of the ways -- one is a dual-boot Classic MacOS/NetBSD 10.1 system, and the second is a NetBSD 10.1-only system. There are other methods described in the NetBSD install document.
 
 What I used for this install:

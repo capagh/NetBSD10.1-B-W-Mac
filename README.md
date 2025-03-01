@@ -219,6 +219,7 @@ Edit rc.conf to make these changes and additions:
 rc_configured=YES
 dhcpcd=YES
 wscons=YES
+sshd=YES
 hostname=netbsd (or whatever name you prefer)
 ifconfig_bm0=“media 100baseTX mediaopt full-duplex”
 ```

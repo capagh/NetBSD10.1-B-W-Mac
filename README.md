@@ -139,7 +139,11 @@ Unmount the filesystem:
 14.(optional) Type “pdisk /dev/wd0c” (“c” here represents the entire drive) to learn more about partitions.
 Type “p” to print the partition table. Do not run any other command. Make note of the leftmost numbers associated with the partitions as you’ll need this to boot from Open Firmware later on. In particular, note the number associated with the HFS/HFS+ partition and also with the AU/X Root partition. Type “q” to quit.
 
-15. Actually install NetBSD! Type “sysinst” to run the installer. **Do NOT** select option “a” as this will demolish the partitions. Instead select option “c: Re-install sets or install additional set.” then “yes” then “b: wd0 ...” then “a: Full installation” (or as desired) then “a: CD-ROM / DVD” (or as desired.)
+15. Actually install NetBSD! Type:
+```
+# asysinst
+```
+to run the installer. **Do NOT** select option “a” as this will demolish the partitions. Instead select option “c: Re-install sets or install additional set.” then “yes” then “b: wd0 ...” then “a: Full installation” (or as desired) then “a: CD-ROM / DVD” (or as desired.)
 
 Note: If you use networking, be sure to specify “100baseTX” instead of the default “autoselect” so ethernet functions correctly.
 
@@ -234,17 +238,25 @@ Add a password for root:
 # passwd root
 ```
 19. Create a normal user (e.g. johndoe) and a home directory for that user, and add that user to the superuser group:
-```# useradd -m -G wheel johndoe```
+```
+# useradd -m -G wheel johndoe
+```
 
 Give the user a password:
-```# passwd johndoe```
+```
+# passwd johndoe
+```
 
 All done.
 
 To reboot:
-```# shutdown -r now```
+```
+# shutdown -r now
+```
 To shut-down and power-off:
-```# shutdown -p now```
+```
+# shutdown -p now
+```
 
 If you wish to boot into MacOS, boot without holding command-option-O-F.
 
@@ -329,7 +341,9 @@ Change the line:
 wd*  at atabus? drive ? flags 0x0000
 ```
 to
-```wd* at atabus? drive? flags 0x0aac```
+```
+wd* at atabus? drive? flags 0x0aac
+```
 and save the change.
 
 This will limit the drive to UDMA mode 2 (ATA/33) which is the drive specification for the blue-and-white G3. See the man page for wd for more information.
@@ -378,7 +392,9 @@ Change the line:
 wd*  at atabus? drive ? flags 0x0000
 ```
 to
-```wd* at atabus? drive? flags 0x0aac```
+```
+wd* at atabus? drive? flags 0x0aac
+```
 and save the change.
 ```
 $ cd /usr/src
@@ -408,7 +424,9 @@ My “solution” was to map the caps-lock key to the left shift key. Therefore 
 Edit /etc/wscons.conf. 
 Underneath the line that begins: “#mapfile /usr/share/wscons/keymaps/pckbd.sv.svascii”
 add a new, uncommented line:
-```mapfile /usr/share/wscons/keymaps/pckbd.caps.shift```
+```
+mapfile /usr/share/wscons/keymaps/pckbd.caps.shift
+```
 and save the change.
 
 Then:
@@ -417,7 +435,9 @@ Then:
 # vi pckbd.caps.shift
 ```
 and add one line to this file:
-```keysym Caps_Lock = Shift_L```
+```
+keysym Caps_Lock = Shift_L
+```
 
 Save and reboot. Caps will now map to shift.
 

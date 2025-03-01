@@ -474,6 +474,12 @@ Section "Module"
 	Load  "shadow"
 EndSection
 
+Section "InputClass"
+	Identifier "keyboard"
+	MatchIsKeyboard "on"
+	Option "XKbOptions" "caps:none" #disables caps lock to prevent freezing. Comment out if your keyboard doesn't freeze your mac.
+EndSection
+
 Section "InputDevice"
 	Identifier  "Keyboard0"
 	Driver      "kbd"

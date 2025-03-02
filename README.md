@@ -20,6 +20,7 @@ What I used for this install:
 - A copy of MacOS 9 on CD/DVD (to partition the drive using MacOS 9’s Drive Setup utility.)
 - A copy of MacOS 8.6 (I like 8.6 more than 9. I used Drive Setup on 9 to partition the disk. Then I installed 8.6.)
 - A copy of NetBSD 10.1 on CD/DVD. (https://cdn.netbsd.org/pub/NetBSD/images/10.1/ titled “NetBSD-10.1-macppc.iso.”) (Alternately, skip the ISO and just install via FTP.)
+- A Macbook Air M1 as a helper machine, to create a entropy seed and to copy files around via ftp and sftp, and to emulate an AMD64 machine running NetBSD to compile custom kernels for PowerPC.
 - The macOS X application “QuickFTP,” available free from the macOS app store.
 
 Note: I’ve not tried a SCSI disk on my Blue-and White. I suspect SCSI would wholly avoid the problems I encountered. Consider using blueSCSI or ZuluSCSI as finding a good SCSI drive is difficult these days. The blue-and-white doesn't have built-in SCSI so you'll need a PCI SCSI card, such as those from Adaptec, et al. Make sure it's a Mac-bootable (Mac firmware) SCSI card, as a PC SCSI card probably won't work.

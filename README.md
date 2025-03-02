@@ -109,13 +109,13 @@ When asked, accept “vt100” as terminal type.
 
 12. Select “(S)hell” when asked. 
 
-11. Optional: type:
+13. Optional: type:
 ```
 # disklabel /dev/wd0
 ```
 to see some cool partition information. Make note of the letter assigned the partitions. On my install, “a” is assigned to 4.2BSD (root/usr) and “b” is assigned to swap. (Do not use disklabel for any other purpose as it will wreck your partitions.)
 
-12. Create a NetBSD filesystem on partition “a,” mount it, and create an etc folder:
+14. Create a NetBSD filesystem on partition “a,” mount it, and create an etc folder:
 ```
 # newfs /dev/wd0a
 # mount /dev/wd0a /targetroot
@@ -123,7 +123,7 @@ to see some cool partition information. Make note of the letter assigned the par
 ```
 (The official NetBSD install notes say to mount this partition as /mnt but this will cause an error later during the install, so use /targetroot.)
 
-13. Create an fstab file: Type the following (I used tabs to keep everything tidy, but you can also use spaces.):
+15. Create an fstab file: Type the following (I used tabs to keep everything tidy, but you can also use spaces.):
 ```
 # cat > /targetroot/etc/fstab
 /dev/wd0a	/		ffs	rw	1	1
@@ -136,18 +136,18 @@ Unmount the filesystem:
 ```
 # umount /targetroot
 ```
-14.(optional) Type “pdisk /dev/wd0c” (“c” here represents the entire drive) to learn more about partitions.
+16.(optional) Type “pdisk /dev/wd0c” (“c” here represents the entire drive) to learn more about partitions.
 Type “p” to print the partition table. Do not run any other command. Make note of the leftmost numbers associated with the partitions as you’ll need this to boot from Open Firmware later on. In particular, note the number associated with the HFS/HFS+ partition and also with the AU/X Root partition. Type “q” to quit.
 
-15. Actually install NetBSD! Type:
+17. Actually install NetBSD! Type:
 ```
-# asysinst
+# sysinst
 ```
 to run the installer. **Do NOT** select option “a” as this will demolish the partitions. Instead select option “c: Re-install sets or install additional set.” then “yes” then “b: wd0 ...” then “a: Full installation” (or as desired) then “a: CD-ROM / DVD” (or as desired.)
 
 Note: If you use networking, be sure to specify “100baseTX” instead of the default “autoselect” so ethernet functions correctly.
 
-16. You’ll  now be asked to set up entropy. The way I did it is with option “c: Load raw binary random data.”
+18. You’ll  now be asked to set up entropy. The way I did it is with option “c: Load raw binary random data.”
 
 In Terminal.app on my M1:
 ```
@@ -197,7 +197,7 @@ When you hear the chime, hold down command-option-O-F again to get into Open Fir
 ```
 0 > boot /pci@80000000/pci-bridge@d/Ultra-Tek100P@3/sd:,\ofwboot.xcf netbsd
 ```
-16. NetBSD will state /etc/rc.conf isn’t configured. Hit return to accept /bin/sh. Type:
+19. NetBSD will state /etc/rc.conf isn’t configured. Hit return to accept /bin/sh. Type:
 ```
 # export TERM=vt100
 # mount -uw /
@@ -238,7 +238,7 @@ Add a password for root:
 ```
 # passwd root
 ```
-19. Create a normal user (e.g. johndoe) and a home directory for that user, and add that user to the superuser group:
+20. Create a normal user (e.g. johndoe) and a home directory for that user, and add that user to the superuser group:
 ```
 # useradd -m -G wheel johndoe
 ```

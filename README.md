@@ -12,7 +12,7 @@ Direct questions or comments to capa150 at gmail.com
 
 Although I wrote this for the b&w G3, the information in this document may be useful for installing NetBSD 10.1 on other Macintosh models.
 
-There are several ways to install NetBSD 10.1 on a Mac. This text describes two of the ways -- one is a dual-boot Classic MacOS/NetBSD 10.1 system, and the second is a NetBSD 10.1-only system. There are other methods described in the NetBSD install document.
+There are several ways to install NetBSD 10.1 on a Mac. This text describes two of the ways -- one is a dual-boot Classic MacOS/NetBSD 10.1 system, (and the second is a NetBSD 10.1-only system -- not written yet!). There are other methods described in the NetBSD install document.
 
 What I used for this install:
 - A Blue-and-White Macintosh G3 with a CD/DVD drive.
@@ -22,7 +22,7 @@ What I used for this install:
 - A copy of NetBSD 10.1 on CD/DVD. (https://cdn.netbsd.org/pub/NetBSD/images/10.1/ titled “NetBSD-10.1-macppc.iso.”) (Alternately, skip the ISO and just install via FTP.)
 - The macOS X application “QuickFTP,” available free from the macOS app store.
 
-Note: I’ve not tried a SCSI disk on my Blue-and White. I suspect SCSI would wholly avoid the problems I encountered. Consider using blueSCSI or ZuluSCSI as finding a good SCSI drive is difficult these days.
+Note: I’ve not tried a SCSI disk on my Blue-and White. I suspect SCSI would wholly avoid the problems I encountered. Consider using blueSCSI or ZuluSCSI as finding a good SCSI drive is difficult these days. The blue-and-white doesn't have built-in SCSI so you'll need a PCI SCSI card, such as those from Adaptec, et al. Make sure it's a Mac-bootable (Mac firmware) SCSI card, as a PC SCSI card probably won't work.
 
 This install assumes the Mac has one hard disk. Be sure to back-up any important data before proceeding.
 

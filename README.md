@@ -83,7 +83,7 @@ I resolved this problem by compiling two custom kernels -- one for installation,
 
 9. Reboot into the new MacOS. Quit the MacOS Setup Assistant. Insert the NetBSD 10.1 disc. Drag “ofwboot.xcf” to the Mac’s hard drive.
 
-10. Two kernels on this repository will limit the drive to UDMA mode 2:
+10. Two kernels on this Github repository will limit the drive to UDMA mode 2:
 
 netbsd-INSTALL  
 netbsd
